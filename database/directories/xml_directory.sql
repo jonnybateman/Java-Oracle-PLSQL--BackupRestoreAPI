@@ -1,1 +1,1 @@
-CREATE OR REPLACE DIRECTORY xmldir AS 'C:\oraclexe\app\oracle\product\11.2.0\server\rdbms\xml';
+CREATE OR REPLACE DIRECTORY xmldir AS 'C:\Oracle\product\18.0.0\dbhomeXE\rdbms\xml';
