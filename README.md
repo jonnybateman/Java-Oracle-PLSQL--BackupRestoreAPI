@@ -1,10 +1,14 @@
-# Server-Side Backup Processing
+# Java Socket/Oracle PLSQL Backup & Restore API
 
 A collection of Java and Oracle PL/SQL scripts to backup or restore data held in a SQLite database belonging to an Android application, in this case a shopping list app.
 
+## User Account
+
+Before a backup or restoration can be performed a user account needs to be created on the server. The method ClientValidateUser.validateUser() will send a request to the server to create a user for the specified username. If one does not already exist a valid user id will be returned. User details will be stored in the app's sqlite database. 
+
 ## Backup
 
-The shopping list app will write data from all database tables into a XML file. This file is then sent to server for backup.
+A backup request instigates ClientBackupXML.createBackupXML(). This method will write data from all sqlite database tables into a XML file. This file is then sent by ClientBackup.backupData() to the server for processing. The client-server communication channel utilises java socket programming. The user_id wil be sent to the server. If a valid response is received the client will then send the xml file containing the table data to the server.
 
 This repository can be split into two distinct groups of files:
 1. .java files for accepting an incoming server socket connection from a client app and establishing a JDBC connection to the Oracle backup database on the server. Multiple server connection threads are supported for multiple client sessions.
