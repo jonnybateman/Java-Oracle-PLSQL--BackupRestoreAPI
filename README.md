@@ -8,7 +8,7 @@ Before a backup or restoration can be performed a user account needs to be creat
 
 ## Backup
 
-A backup request instigates ClientBackupXML.createBackupXML(). This method will write data from all sqlite database tables into a XML file. This file is then sent by ClientBackup.backupData() to the server for processing. The client-server communication channel utilises java socket programming. The user_id wil be sent to the server. If a valid response is received the client will then send the xml file containing the table data to the server.
+A backup request instigates ClientBackupXML.createBackupXML(). This method will write data from all sqlite database tables into a XML file. This file is then sent by ClientBackup.backupData() to the server for processing. The client-server communication channel utilises java socket programming. The user_id will be sent to the server. If a valid response is received the client will then send the xml file containing the table data to the server.
 
 This repository can be split into two distinct groups of files:
 1. .java files for accepting an incoming server socket connection from a client app and establishing a JDBC connection to the Oracle backup database on the server. Multiple server connection threads are supported for multiple client sessions.
